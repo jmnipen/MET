@@ -1,6 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt 
 from netCDF4 import Dataset 
+from datetime import datetime
 
 #Jomfrulandet coordinates
 lat = 58.857878
@@ -116,5 +117,14 @@ def main():
 #main()
 print_info()
 print_variables()
+time = []
+for i in range(len(time_nn[:])):
+    time.append(datetime.utcfromtimestamp(int(time_nn[i])).strftime('%Y-%m-%d %H:%M:%S'))
 
-print(time_nn[:])
+
+#print(time)
+#for i in range(len(time)):
+#    print(time[i])
+
+
+print(fcst_nn)
